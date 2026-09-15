@@ -133,22 +133,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
               <button
-                onClick={() => setControlMode('pedals')}
-                className={`p-3 rounded-xl border text-start transition ${
-                  controlMode === 'pedals'
-                    ? 'border-amber-400 bg-amber-500/10 text-zinc-100 shadow'
-                    : 'border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:border-zinc-700'
-                }`}
-              >
-                <span className="font-black text-xs block mb-0.5 text-amber-300">
-                  {lang === 'ar' ? 'دواسات سيارة قياسية (موصى به)' : 'Classic Car Pedals (Recommended)'}
-                </span>
-                <span className="text-[11px] text-zinc-400 block">
-                  {lang === 'ar' ? 'دواسة بنزين خضراء + فرامل ورجوع حمراء + أزرار توجيه' : 'Separate Gas & Brake/Reverse pedals + steer buttons'}
-                </span>
-              </button>
-
-              <button
                 onClick={() => setControlMode('joystick')}
                 className={`p-3 rounded-xl border text-start transition ${
                   controlMode === 'joystick'
@@ -157,10 +141,26 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                 }`}
               >
                 <span className="font-black text-xs block mb-0.5 text-amber-300">
-                  {lang === 'ar' ? 'جويستيك تناظري' : 'Virtual Analog Joystick'}
+                  {lang === 'ar' ? 'جويستيك لمس وسحب للهواتف (موصى به)' : 'Mobile Swipe Joystick (Recommended)'}
                 </span>
                 <span className="text-[11px] text-zinc-400 block">
-                  {lang === 'ar' ? 'مقبض دائري للتحكم في كافة الاتجاهات' : 'Single 360-degree analog touch thumbstick'}
+                  {lang === 'ar' ? 'سحب بالأصبع للتوجيه والدوس للأمام والخلف بسلاسة لمس كاملة' : 'Smooth analog thumbstick for driving, steering, and reversing by touch swipe'}
+                </span>
+              </button>
+
+              <button
+                onClick={() => setControlMode('pedals')}
+                className={`p-3 rounded-xl border text-start transition ${
+                  controlMode === 'pedals'
+                    ? 'border-amber-400 bg-amber-500/10 text-zinc-100 shadow'
+                    : 'border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:border-zinc-700'
+                }`}
+              >
+                <span className="font-black text-xs block mb-0.5 text-amber-300">
+                  {lang === 'ar' ? 'دواسات سيارة وأزرار منفصلة' : 'Classic Separate Pedals'}
+                </span>
+                <span className="text-[11px] text-zinc-400 block">
+                  {lang === 'ar' ? 'دواسة بنزين خضراء + فرامل ورجوع حمراء + أزرار توجيه' : 'Separate Gas & Brake/Reverse pedals + steer buttons'}
                 </span>
               </button>
             </div>

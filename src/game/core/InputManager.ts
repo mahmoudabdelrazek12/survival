@@ -117,8 +117,17 @@ export class InputManager {
 
     // Merge virtual joystick dy (up is negative dy)
     if (this.joystick.active) {
-      if (this.joystick.dy < -0.2) t = Math.max(t, -this.joystick.dy);
-      else if (this.joystick.dy > 0.2) t = Math.min(t, -this.joystick.dy);
+      const absDy = Math.abs(this.joystick.dy);
+      if (absDy > 0.12) {
+        // Linear response with slight deadzone
+        const sign = this.joystick.dy < 0 ? 1 : -1;
+        const normalizedThrottle = sign * ((absDy - 0.12) / 0.88);
+        if (normalizedThrottle > 0) {
+          t = Math.max(t, normalizedThrottle);
+        } else {
+          t = Math.min(t, normalizedThrottle);
+        }
+      }
     }
     return Math.max(-1, Math.min(1, t));
   }
@@ -131,8 +140,11 @@ export class InputManager {
 
     // Merge virtual joystick dx
     if (this.joystick.active) {
-      if (Math.abs(this.joystick.dx) > 0.15) {
-        s = this.joystick.dx;
+      const absDx = Math.abs(this.joystick.dx);
+      if (absDx > 0.10) {
+        const sign = this.joystick.dx > 0 ? 1 : -1;
+        const normalizedSteer = sign * ((absDx - 0.10) / 0.90);
+        s = Math.max(-1, Math.min(1, s + normalizedSteer));
       }
     }
     return Math.max(-1, Math.min(1, s));

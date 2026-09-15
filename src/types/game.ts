@@ -110,6 +110,7 @@ export interface SaveData {
     onlineModeEnabled: boolean;
     language: 'ar' | 'en';
     controlType: 'pedals' | 'joystick' | 'wheel';
+    controlMode?: 'pedals' | 'joystick';
     admobTestEnabled: boolean;
     selectedMapId: string;
     showMiniMap?: boolean;

@@ -34,7 +34,9 @@ export const TRANSLATIONS = {
   // HUD
   hullIntegrity: { en: 'HULL INTEGRITY', ar: 'درع وهيكل المركبة' },
   fuelReserve: { en: 'FUEL RESERVE', ar: 'مخزون الوقود' },
+  fuelRemaining: { en: 'FUEL', ar: 'مخزون الوقود' },
   nitroBoost: { en: 'NITRO BOOST', ar: 'نيترو توربو' },
+  nitroTank: { en: 'NITRO NOS', ar: 'خزان نيترو NOS' },
   timeAlive: { en: 'SURVIVAL TIME', ar: 'زمن البقاء' },
   enemiesDefeated: { en: 'ELIMINATED', ar: 'القتلى' },
   speedKmh: { en: 'KM/H', ar: 'كم/ساعة' },

@@ -150,10 +150,10 @@ export class Vehicle {
       newForwardSpeed *= Math.pow(0.04, dt);
     }
 
-    // Steering: turn faster when moving, inverted in reverse
-    const speedRatio = Math.min(1, Math.abs(forwardSpeed) / 120);
+    // Steering: responsive at both cruising speed and low crawl / stationary
+    const speedRatio = Math.max(0.35, Math.min(1, Math.abs(forwardSpeed) / 100));
     const reverseSign = forwardSpeed < -5 ? -1 : 1;
-    const turnRate = 3.2 * this.handling * speedRatio * reverseSign;
+    const turnRate = 3.4 * this.handling * speedRatio * reverseSign;
 
     if (steer !== 0) {
       this.angle += steer * turnRate * dt;
