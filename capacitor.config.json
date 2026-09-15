@@ -1,0 +1,31 @@
+{
+  "appId": "com.dunesurvival.game",
+  "appName": "Dune Survival",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "backgroundColor": "#09090b",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "launchAutoHide": true,
+      "backgroundColor": "#09090b",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#09090b",
+      "overlaysWebView": true
+    },
+    "ScreenOrientation": {
+      "orientation": "landscape"
+    }
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false,
+    "screenOrientation": "landscape"
+  }
+}

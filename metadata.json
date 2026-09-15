@@ -1,0 +1,6 @@
+{
+  "name": "Dune Survival",
+  "description": "Post-apocalyptic desert survival action game featuring vehicular combat, upgrades, missions, and offline/online architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
